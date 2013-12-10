@@ -30,6 +30,7 @@
 #   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 all:
+	mkdir -p bin
 	cd src; make
 
 install: 
