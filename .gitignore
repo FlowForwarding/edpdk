@@ -1,0 +1,14 @@
+*.cmd
+*.d
+*.o
+build
+*.log
+*.map
+*.beam
+*.dump
+_post*
+_pre*
+edpdk
+bin
+*.py
+*.pyc
