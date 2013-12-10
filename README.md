@@ -6,14 +6,14 @@ commands to allow an Erlang node to receive and transmit packets through DPDK PM
 
 1. {recv, <<>>, PortNo} - Receive a packet from PortNo in the follwing formats:
    
-   a. {ok, <<packet>>} 
-   b. {fail, empty}
+..* {ok, <<packet>>} 
+..* {fail, empty}
    
      
 2. {xmit, <<packet>>, PortNo} - Transmit a packet to PortNo and returns a status in the following formats:
    
-   a. {ok, queued}
-   b. {fail, full_or_busy}
+..* {ok, queued}
+..* {fail, full_or_busy}
    
 The driving motivation for this specific Intel DPDK support is to achieve a "fast path" for an Erlang-based packet
 forwarder (e.g. soft switch).  Based on a very simple experiment, a dumb packet forwarder (fwdr.erl) showed better
@@ -23,5 +23,7 @@ Nevertheless, it could be improved to use Erlang drivers or NIFs to eliminate th
 to be evaluated for these approaches since it does not directly provide system integration facilities.  Integrating
 Intel DPDK with Erlang VM is yet an area to explore and test.
 
+For more information on Intel DPDK please see the following links:
 
-
+[Intel DPDK Packet Processing Overview](http://www.intel.ph/content/dam/www/public/us/en/documents/presentation/dpdk-packet-processing-ia-overview-presentation.pdf)
+[dpdk.org](http://dpdk.org/)
