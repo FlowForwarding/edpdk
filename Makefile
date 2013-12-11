@@ -16,6 +16,7 @@
 all:
 	mkdir -p bin
 	cd src; make
+	cd test; make
 
 install: 
 	cp -f src/build/edpdk bin
@@ -23,3 +24,4 @@ install:
 clean:
 	cd src; make clean
 	cd bin; rm -rf bin/*
+	cd test; rm -rf *.beam
