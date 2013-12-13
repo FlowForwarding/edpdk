@@ -682,8 +682,6 @@ static int lcore_recv_pkts(struct fwd_context *fwc) {
         if (unlikely(num_recv_pkts == 0))
             continue;
 
-        RTE_LOG(INFO, PMDENGINE, "got packets\n");
-
         do {
             /* Will attempt to enqueue all recv pkts */
             rc = rte_ring_sp_enqueue_burst(port->rxtx_rings->xmit_ring,

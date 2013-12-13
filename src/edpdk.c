@@ -118,10 +118,22 @@ int main(int argc, char ** argv) {
 static int eal_init_all(int argc, char ** argv) {
     int rc = 0;
     int ret = 0;
+    FILE * stdout_store;
+
+    /**
+     * This is a clean hack to avoid DPDK from spurting
+     * out early logs to stdout, that can cause Erlang
+     * port to hang.  - TODO(pepe)
+     */
+
+    stdout_store = stdout;
+    stdout = logfp;
 
     ret = rte_eal_init(argc, argv);
     if (ret < 0)
         rte_panic("Failed to initialize EAL\n");
+
+    stdout = stdout_store;
 
     rc = rte_openlog_stream(logfp);
     if (OK != rc)
