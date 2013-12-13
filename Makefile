@@ -22,6 +22,7 @@ install:
 	cp -f src/build/edpdk bin
 
 clean:
+	mkdir -p bin
 	cd src; make clean
-	cd bin; rm -rf bin/*
-	cd test; rm -rf *.beam
+	cd bin; rm -rf *
+	cd test; make clean
