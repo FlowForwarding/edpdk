@@ -1,8 +1,7 @@
-
 # Edpdk Architecture
 
 
-Edpdk provides Erlang-port-based API for sending and receiving packets through a fast path implementation using Intel DPDK.  The fast path implementation was accomplished by utilizing the Intel DPDK API and furthermore exposing this to pmdengine layer.  The pmdengine layer is the interface to DPDK code and as well contain common functions that configure and start ports, lcores and the DPDK main loop.  As a result of these software interactions, an aribtrary Erlang application can receive and transmit packets using the edpdk API.
+Edpdk provides Erlang-port-based API for sending and receiving packets through a fast data path.  The fast path implementation was accomplished by utilizing the Intel DPDK API and furthermore exposing this to pmdengine layer.  The pmdengine layer is the interface to DPDK code and as well contain common functions that configure and start ports, lcores and the DPDK main loop.  As a result of these software interactions, an aribtrary Erlang application can receive and transmit packets using the edpdk API.
 
 
 ### Notable Features of edpdk
